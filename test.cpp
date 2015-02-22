@@ -11,6 +11,11 @@ int main()
 		cout << "Problem have been solved! The result is: " << endl;
 		su1.printSudokuGrid();
 	}
-		
+	else
+	{
+		cout << "can't solve it: " << endl;
+		su1.printSudokuGrid();
+	}
+
 	return 0;
 }

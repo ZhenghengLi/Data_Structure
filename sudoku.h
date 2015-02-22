@@ -55,9 +55,9 @@ void sudoku::initializeSudokuGrid()
 			cout << endl;
 		}
 		
-		cout << "Dose it right? Do you want to re-input? (y/n) ";
+		cout << "Dose it right? (y/n) ";
 		cin >> yn;
-		if (yn != 'y')
+		if (yn != 'n')
 		{
 			flag = false;
 			for (int i = 0; i < 9; i++)

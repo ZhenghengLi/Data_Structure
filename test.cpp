@@ -1,10 +1,16 @@
-#include "queens.h"
+#include "sudoku.h"
 
 using namespace std;
 
 int main()
 {
-	nQueensPuzzle queens(8);
-	queens.queensConfiguration(0);
+	sudoku su1;
+	su1.initializeSudokuGrid();
+	if (su1.solveSudoku())
+	{
+		cout << "Problem have been solved! The result is: " << endl;
+		su1.printSudokuGrid();
+	}
+		
 	return 0;
 }

@@ -2,66 +2,50 @@
 
 using namespace std;
 
-class A
-{
-public:
-	A(int, int);
-	int plus(int);
-	int times();
-private:
-	int x;
-	int y;
-};
-
-A::A(int a, int b)
-{
-	x = a;
-	y = b;
-}
-
-int A::plus(int xx)
-{
-	int x = 13;
-	return x + y;
-}
-
-int A::times()
-{
-	return x * y;
-}
-
-class B: public A
-{
-public:
-	B(int, int, int);
-	int funB();
-	int bb;
-private:
-	int c;
-};
-
-B::B(int aa, int bb, int cc): A(aa, bb)
-{
-	c = cc;
-}
-
-int B::funB()
-{
-	return times() + c;
-}
+int fplus(int, int);
+int ftimes(int, int);
+int changevalue(int&, int);
+int usefun(int, int, int (&fun)(int, int));
+int& leftchange(int &);
 
 int main()
 {
-	B b(3, 4, 5);
-	b.bb = 100;
-	A *a;
-	cout << "sizeof(a): " << sizeof(a) << endl;
-	a = &b;
-	cout << "sizeof(a): " << sizeof(a) << endl;
-	cout << b.bb << endl;
-	cout << a->plus(15) << endl;
-	cout << b.plus(15) << endl;
-//	cout << a.funB() << endl;
-	
+	int x = 20;
+	int y = 34;
+	cout << usefun(x, y, fplus) << endl;
+	cout << usefun(x, y, ftimes) << endl;
+	cout << "x = " << x << endl;
+	changevalue(x, 123);
+	cout << "x = " << x << endl;
+	leftchange(x) = 345;
+	cout << "x = " << x << endl;
+
 	return 0;
 }
+
+int fplus(int a, int b)
+{
+	return a + b;
+}
+
+int ftimes(int a, int b)
+{
+	return a * b;
+}
+
+int changevalue(int &a, int b)
+{
+	a = b;
+	return a;
+}
+
+int& leftchange(int &a)
+{
+	return a;
+}
+
+int usefun(int a, int b, int (&fun)(int, int))
+{
+	return fun(a, b);
+}
+

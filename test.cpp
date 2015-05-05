@@ -2,18 +2,17 @@
 
 using namespace std;
 
-void fun(const int &a, int &b, int x)
+void fun(int a)
 {
 	cout << a << endl;
-	b = x;
+	a++;
 	cout << a << endl;
 }
 
 int main()
 {
 	int y = 10;
-	fun(y, y, 100);
-	cout << y << endl;
+	fun(y);
 	return 0;
 }
 

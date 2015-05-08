@@ -1,32 +1,25 @@
 #include <iostream>
-#include <string.h>
+#include <cfloat>
+#include <limits.h>
 
 using namespace std;
 
 int main()
 {
-	int a = 1234;
-	int b = 2345;
-	int arr[2] = {1, 2};
-	int c = 3456;
-	int d = 4567;
-	
-	cout << "a = " << a << endl;
-	cout << "b = " << b << endl;
-	cout << "c = " << c << endl;
-	cout << "d = " << d << endl;
+	double a = DBL_MAX;
+	double b = DBL_MAX;
+	double c = a + 123.32;
 
-	arr[2] = 9;
-	arr[3] = 8;
-	arr[4] = 3;
-	
 	cout << "a = " << a << endl;
-	cout << "b = " << b << endl;
 	cout << "c = " << c << endl;
-	cout << "d = " << d << endl;
+
+	if (c < DBL_MAX)
+		cout << "c < DBL_MAX" << endl;
+	else if(c > DBL_MAX)
+		cout << "c > DBL_MAX" << endl;
+	else if(c == a)
+		cout << "c == DBL_MAX" << endl;
 	
 	return 0;
 }
-
-
 

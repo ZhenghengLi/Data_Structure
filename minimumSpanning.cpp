@@ -16,7 +16,7 @@ void msTreeType::minimumSpanning(int sVertex)
 	edgeWeights[source] = 0;
 	visited[source] = true;
 
-	for (int i = 0; i < gSize; i++)
+	for (int i = 0; i < gSize - 1; i++)
 	{
 		minWeight = DBL_MAX;
 		
@@ -37,3 +37,4 @@ void msTreeType::minimumSpanning(int sVertex)
 			}
 	}
 }
+

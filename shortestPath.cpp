@@ -24,7 +24,7 @@ void weightedGraphType::shortestPath(int vertex)
 
 		for (int j = 0; j < gSize; j ++)
 			if (!weightFound[j])
-				if (smallestWeight[j] < minWeight)
+				if (smallestWeight[j] <= minWeight)
 				{
 					v = j;
 					minWeight = smallestWeight[v];
